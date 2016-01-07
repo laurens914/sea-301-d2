@@ -11,12 +11,26 @@
     <link rel="stylesheet" href="styles/modules.css">
 
     <!--
-      TODO: Add a script tag to hold the Handlebars template.
+      DID: Add a script tag to hold the Handlebars template.
         - Be sure to give it a meaningful id attribute.
         - Move your old template structure to here.
         - Insert placeholder keys.
         - If your object doesn't have values you need yet, you can add those properties in the model.
     -->
+    <script id='blog-post' type='text/x-handlebars-template'>
+      <article class='clearfix' data-category="{{category}}" data-author= "{{author}}">
+         <header>
+           <h1>{{title}}</h1>
+           <div class="byline">
+             By <address><a href="{{authorUrl}}">{{author}}</a></address>
+             published <time pubdate datetime="2000-01-01">{{daysAgo}} days ago</time>
+           </div>
+         </header>
+         <section class="article-body">{{{body}}}</section>
+         <a href="#" class="read-on">Read on &rarr;</a>
+       <hr>
+     </article>
+    </script>
 
   </head>
   <body>
@@ -54,6 +68,7 @@
           </ul>
         </div>
       </section>
+      <div id='posts'></div>
       <section id="about" class="tab-content">
         <header>
           Welcome to my Blog
@@ -73,7 +88,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- TODO: Include Handlebars.JS from a CDN -->
+    <!-- DID: Include Handlebars.JS from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>

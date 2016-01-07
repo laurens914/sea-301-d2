@@ -37,7 +37,7 @@ articleView.handleCategoryFilter = function() {
       $('article[data-category="' + $(this).val() + '"]').fadeIn();
     } else {
       $('article').fadeIn();
-      $('article.template').hide();
+      $('article.clearfix').hide();
     }
     $('#author-filter').val('');
   });
